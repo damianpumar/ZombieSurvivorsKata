@@ -85,8 +85,10 @@ public class SurvivorShould {
         survivor.addEquipment("Pistol");
         survivor.addEquipment("Molotov");
 
+        survivor.receiveAttack();
+
         assertThat(survivor.piecesInHand().size()).isEqualTo(1);
-        assertThat(survivor.piecesInReserve().size()).isEqualTo(3);
+        assertThat(survivor.piecesInReserve().size()).isEqualTo(0);
     }
 
     private Survivor createSurvivor() {

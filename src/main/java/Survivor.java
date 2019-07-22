@@ -32,6 +32,14 @@ public class Survivor {
             return;
 
         this.wounds++;
+
+        this.piecesInReserve().clear();
+
+        if (this.piecesInHand.size() > 0) {
+            Piece piece = this.piecesInHand.get(0);
+
+            this.piecesInHand.remove(piece);
+        }
     }
 
     public List<Piece> piecesInHand() {
