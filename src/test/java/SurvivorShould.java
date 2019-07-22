@@ -76,6 +76,19 @@ public class SurvivorShould {
         assertThat(survivor.piecesInReserve().size()).isEqualTo(3);
     }
 
+    @Test
+    public void reduces_pieces_of_equipment_carry_by_1_each_wound() {
+        Survivor survivor = createSurvivor();
+        survivor.addEquipment("BaseBall bat");
+        survivor.addEquipment("Frying pan");
+        survivor.addEquipment("Katana");
+        survivor.addEquipment("Pistol");
+        survivor.addEquipment("Molotov");
+
+        assertThat(survivor.piecesInHand().size()).isEqualTo(1);
+        assertThat(survivor.piecesInReserve().size()).isEqualTo(3);
+    }
+
     private Survivor createSurvivor() {
         return new Survivor("Damián");
     }
