@@ -45,7 +45,7 @@ public class Survivor {
     public void addEquipment(String pieceOfEquipment) {
         if (this.piecesInHand.size() < 2)
             this.piecesInHand.add(new Piece(pieceOfEquipment));
-        else
+        else if (this.piecesInReserve.size() < 3)
             this.piecesInReserve().add(new Piece(pieceOfEquipment));
     }
 }
