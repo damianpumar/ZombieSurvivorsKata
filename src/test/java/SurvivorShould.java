@@ -21,6 +21,9 @@ public class SurvivorShould {
     public void dies_immediately_when_receives_2_wounds() {
         Survivor survivor = new Survivor("Damián");
 
+        survivor.receiveAttack();
+        survivor.receiveAttack();
+
         assertThat(survivor.isAlive()).isFalse();
     }
 }

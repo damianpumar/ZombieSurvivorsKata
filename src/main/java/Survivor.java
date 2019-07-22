@@ -16,6 +16,10 @@ public class Survivor {
     }
 
     public boolean isAlive() {
-        return true;
+        return this.wounds < 2;
+    }
+
+    public void receiveAttack() {
+        this.wounds++;
     }
 }
