@@ -9,4 +9,11 @@ public class SurvivorShould {
 
         assertThat(survivor.name()).isEqualTo("Damián");
     }
+
+    @Test
+    public void begins_zero_wounds() {
+        Survivor survivor = new Survivor("Damián");
+
+        assertThat(survivor.wounds()).isEqualTo(0);
+    }
 }

@@ -8,4 +8,8 @@ public class Survivor {
     public String name() {
         return this.name;
     }
+
+    public int wounds() {
+        return -1;
+    }
 }
