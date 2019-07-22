@@ -37,4 +37,11 @@ public class SurvivorShould {
 
         assertThat(survivor.wounds()).isEqualTo(2);
     }
+
+    @Test
+    public void first_2_pieces_of_equipment_carry_in_hand() {
+        Survivor survivor = new Survivor("Damián");
+
+        assertThat(survivor.piecesInHand().size()).isEqualTo(2);
+    }
 }

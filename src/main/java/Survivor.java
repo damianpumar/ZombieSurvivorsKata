@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Survivor {
     private int wounds = 0;
 
@@ -24,5 +27,9 @@ public class Survivor {
             return;
 
         this.wounds++;
+    }
+
+    public List<Piece> piecesInHand() {
+        return new ArrayList<Piece>();
     }
 }
