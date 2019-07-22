@@ -26,4 +26,15 @@ public class SurvivorShould {
 
         assertThat(survivor.isAlive()).isFalse();
     }
+
+    @Test
+    public void additional_wounds_are_ignored() {
+        Survivor survivor = new Survivor("Damián");
+        survivor.receiveAttack();
+        survivor.receiveAttack();
+
+        survivor.receiveAttack();
+
+        assertThat(survivor.wounds()).isEqualTo(2);
+    }
 }
