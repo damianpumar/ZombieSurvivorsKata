@@ -16,4 +16,11 @@ public class SurvivorShould {
 
         assertThat(survivor.wounds()).isEqualTo(0);
     }
+
+    @Test
+    public void dies_immediately_when_receives_2_wounds() {
+        Survivor survivor = new Survivor("Damián");
+
+        assertThat(survivor.isAlive()).isFalse();
+    }
 }

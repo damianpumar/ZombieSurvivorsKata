@@ -14,4 +14,8 @@ public class Survivor {
     public int wounds() {
         return this.wounds;
     }
+
+    public boolean isAlive() {
+        return true;
+    }
 }
