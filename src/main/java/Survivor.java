@@ -1,9 +1,11 @@
 public class Survivor {
-    public Survivor(String name) {
+    private String name;
 
+    public Survivor(String name) {
+        this.name = name;
     }
 
     public String name() {
-        return "Name";
+        return this.name;
     }
 }
