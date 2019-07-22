@@ -6,11 +6,13 @@ public class Survivor {
 
     private String name;
     private final List<Piece> piecesInHand;
+    private final List<Piece> piecesInReserve;
 
     public Survivor(String name) {
         this.name = name;
 
         this.piecesInHand = new ArrayList();
+        this.piecesInReserve = new ArrayList();
     }
 
     public String name() {
@@ -36,11 +38,14 @@ public class Survivor {
         return this.piecesInHand;
     }
 
-    public void addEquipment(String pieceOfEquipment) {
-        this.piecesInHand.add(new Piece(pieceOfEquipment));
+    public List<Piece> piecesInReserve() {
+        return this.piecesInReserve;
     }
 
-    public List<Piece> piecesInReserve() {
-        return new ArrayList();
+    public void addEquipment(String pieceOfEquipment) {
+        if (this.piecesInHand.size() < 2)
+            this.piecesInHand.add(new Piece(pieceOfEquipment));
+        else
+            this.piecesInReserve().add(new Piece(pieceOfEquipment));
     }
 }
