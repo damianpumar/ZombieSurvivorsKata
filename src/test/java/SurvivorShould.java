@@ -61,6 +61,21 @@ public class SurvivorShould {
         assertThat(survivor.piecesInReserve().size()).isEqualTo(3);
     }
 
+    @Test
+    public void has_maximum_5_pieces_of_equipment() {
+        Survivor survivor = createSurvivor();
+        survivor.addEquipment("BaseBall bat");
+        survivor.addEquipment("Frying pan");
+        survivor.addEquipment("Katana");
+        survivor.addEquipment("Pistol");
+        survivor.addEquipment("Molotov");
+
+        survivor.addEquipment("Bottled Water");
+
+        assertThat(survivor.piecesInHand().size()).isEqualTo(2);
+        assertThat(survivor.piecesInReserve().size()).isEqualTo(3);
+    }
+
     private Survivor createSurvivor() {
         return new Survivor("Damián");
     }
