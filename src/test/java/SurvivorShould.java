@@ -42,6 +42,9 @@ public class SurvivorShould {
     public void first_2_pieces_of_equipment_carry_in_hand() {
         Survivor survivor = new Survivor("Damián");
 
+        survivor.addEquipment("BaseBall bat");
+        survivor.addEquipment("Frying pan");
+
         assertThat(survivor.piecesInHand().size()).isEqualTo(2);
     }
 }
