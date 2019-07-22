@@ -39,4 +39,8 @@ public class Survivor {
     public void addEquipment(String pieceOfEquipment) {
         this.piecesInHand.add(new Piece(pieceOfEquipment));
     }
+
+    public List<Piece> piecesInReserve() {
+        return new ArrayList();
+    }
 }

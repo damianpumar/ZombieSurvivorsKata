@@ -5,21 +5,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SurvivorShould {
     @Test
     public void has_a_name() {
-        Survivor survivor = new Survivor("Damián");
+        Survivor survivor = createSurvivor();
 
         assertThat(survivor.name()).isEqualTo("Damián");
     }
 
     @Test
     public void begins_zero_wounds() {
-        Survivor survivor = new Survivor("Damián");
+        Survivor survivor = createSurvivor();
 
         assertThat(survivor.wounds()).isEqualTo(0);
     }
 
     @Test
     public void dies_immediately_when_receives_2_wounds() {
-        Survivor survivor = new Survivor("Damián");
+        Survivor survivor = createSurvivor();
 
         survivor.receiveAttack();
         survivor.receiveAttack();
@@ -29,7 +29,7 @@ public class SurvivorShould {
 
     @Test
     public void additional_wounds_are_ignored() {
-        Survivor survivor = new Survivor("Damián");
+        Survivor survivor = createSurvivor();
         survivor.receiveAttack();
         survivor.receiveAttack();
 
@@ -40,11 +40,28 @@ public class SurvivorShould {
 
     @Test
     public void first_2_pieces_of_equipment_carry_in_hand() {
-        Survivor survivor = new Survivor("Damián");
+        Survivor survivor = createSurvivor();
 
         survivor.addEquipment("BaseBall bat");
         survivor.addEquipment("Frying pan");
 
         assertThat(survivor.piecesInHand().size()).isEqualTo(2);
+    }
+
+    @Test
+    public void after_2_pieces_of_equipment_carry_in_reserve() {
+        Survivor survivor = createSurvivor();
+        survivor.addEquipment("BaseBall bat");
+        survivor.addEquipment("Frying pan");
+
+        survivor.addEquipment("Katana");
+        survivor.addEquipment("Pistol");
+        survivor.addEquipment("Molotov");
+
+        assertThat(survivor.piecesInReserve().size()).isEqualTo(3);
+    }
+
+    private Survivor createSurvivor() {
+        return new Survivor("Damián");
     }
 }
