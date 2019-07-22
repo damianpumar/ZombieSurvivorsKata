@@ -1,4 +1,6 @@
 public class Survivor {
+    private int wounds = 0;
+
     private String name;
 
     public Survivor(String name) {
@@ -10,6 +12,6 @@ public class Survivor {
     }
 
     public int wounds() {
-        return -1;
+        return this.wounds;
     }
 }
