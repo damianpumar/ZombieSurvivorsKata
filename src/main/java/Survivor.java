@@ -20,6 +20,9 @@ public class Survivor {
     }
 
     public void receiveAttack() {
+        if (!this.isAlive())
+            return;
+
         this.wounds++;
     }
 }
