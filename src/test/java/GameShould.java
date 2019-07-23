@@ -11,7 +11,7 @@ public class GameShould {
     }
 
     @Test
-    public void game_can_have_survivors() {
+    public void game_can_have_survivors() throws SurvivorDuplicatedException {
         Game game = new Game();
 
         game.addSurvivor(new Survivor("Damián"));
@@ -20,7 +20,7 @@ public class GameShould {
     }
 
     @Test(expected = SurvivorDuplicatedException.class)
-    public void game_can_have_unique_survivor_by_name() {
+    public void game_can_have_unique_survivor_by_name() throws SurvivorDuplicatedException {
         Game game = new Game();
 
         game.addSurvivor(new Survivor("Damián"));

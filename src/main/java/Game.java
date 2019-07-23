@@ -12,7 +12,14 @@ public class Game {
         return this.survivors;
     }
 
-    public void addSurvivor(Survivor survivor) {
+    public void addSurvivor(Survivor survivor) throws SurvivorDuplicatedException {
+        if (this.survivorExists(survivor))
+            throw new SurvivorDuplicatedException();
+
         this.survivors.add(survivor);
+    }
+
+    private boolean survivorExists(Survivor survivor) {
+        return this.survivors.stream().anyMatch(s -> s.name().equals(survivor.name()));
     }
 }
