@@ -98,6 +98,13 @@ public class SurvivorShould {
         assertThat(survivor.experience()).isEqualTo(0);
     }
 
+    @Test
+    public void each_survivor_begins_at_level_blue() {
+        Survivor survivor = createSurvivor();
+
+        assertThat(survivor.level()).isEqualTo(LEVEL.blue);
+    }
+
     private Survivor createSurvivor() {
         return new Survivor("Damián");
     }

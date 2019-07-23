@@ -66,4 +66,8 @@ public class Survivor {
     public int experience() {
         return this.experience;
     }
+
+    public LEVEL level() {
+        throw new UnsupportedOperationException();
+    }
 }
