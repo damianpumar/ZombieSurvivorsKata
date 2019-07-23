@@ -75,6 +75,6 @@ public class Survivor {
     }
 
     public void killZombie() {
-        throw new UnsupportedOperationException();
+        this.experience++;
     }
 }
