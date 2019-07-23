@@ -12,7 +12,7 @@ public class Game {
         return this.survivors;
     }
 
-    public void addSurvivor(Survivor damián) {
-        throw new UnsupportedOperationException();
+    public void addSurvivor(Survivor survivor) {
+        this.survivors.add(survivor);
     }
 }
