@@ -82,5 +82,8 @@ public class Survivor {
 
         if (this.experience == 18)
             this.level = LEVEL.orange;
+
+        if (this.experience == 42)
+            this.level = LEVEL.red;
     }
 }
