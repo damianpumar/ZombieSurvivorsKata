@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Game {
@@ -28,6 +29,9 @@ public class Game {
     }
 
     public LEVEL level() {
-        throw new UnsupportedOperationException();
+        if (this.survivors.size() > 0)
+            return this.survivors.stream().max(Comparator.comparing(Survivor::experience)).get().level();
+
+        return LEVEL.blue;
     }
 }
