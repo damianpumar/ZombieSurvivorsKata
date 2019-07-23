@@ -7,9 +7,11 @@ public class Survivor {
     private String name;
     private final List<Piece> piecesInHand;
     private final List<Piece> piecesInReserve;
+    private int experience;
 
     public Survivor(String name) {
         this.name = name;
+        this.experience = 0;
 
         this.piecesInHand = new ArrayList();
         this.piecesInReserve = new ArrayList();
@@ -57,7 +59,7 @@ public class Survivor {
             this.piecesInReserve().add(new Piece(pieceOfEquipment));
     }
 
-    public boolean experience() {
-        throw new UnsupportedOperationException();
+    public int experience() {
+        return this.experience;
     }
 }
