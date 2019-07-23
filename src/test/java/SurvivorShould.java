@@ -103,4 +103,16 @@ public class SurvivorShould {
 
         assertThat(survivor.experience()).isEqualTo(1);
     }
+
+    @Test
+    public void has_6_in_experience_for_level_up_to_yellow() {
+        survivor.killZombie();
+        survivor.killZombie();
+        survivor.killZombie();
+        survivor.killZombie();
+        survivor.killZombie();
+        survivor.killZombie();
+
+        assertThat(survivor.level()).isEqualTo(LEVEL.yellow);
+    }
 }
