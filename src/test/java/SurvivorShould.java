@@ -106,39 +106,28 @@ public class SurvivorShould {
 
     @Test
     public void has_6_in_experience_for_level_up_to_yellow() {
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
+        upToExperience(6);
 
         assertThat(survivor.level()).isEqualTo(LEVEL.yellow);
     }
 
     @Test
     public void has_18_in_experience_for_level_up_to_yellow() {
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
-        survivor.killZombie();
+        upToExperience(18);
 
         assertThat(survivor.level()).isEqualTo(LEVEL.orange);
+    }
+
+    @Test
+    public void has_42_in_experience_for_level_up_to_yellow() {
+        upToExperience(42);
+
+        assertThat(survivor.level()).isEqualTo(LEVEL.red);
+    }
+
+    private void upToExperience(int experience) {
+        for (int i = 1; i <= experience; i++) {
+            survivor.killZombie();
+        }
     }
 }

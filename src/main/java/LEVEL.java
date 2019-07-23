@@ -1,3 +1,3 @@
 public enum LEVEL {
-    yellow, orange, blue
+    yellow, orange, red, blue
 }
