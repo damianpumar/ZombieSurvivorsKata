@@ -9,4 +9,13 @@ public class GameShould {
 
         assertThat(game.survivors().size()).isEqualTo(0);
     }
+
+    @Test
+    public void game_can_have_survivors() {
+        Game game = new Game();
+
+        game.addSurvivor(new Survivor("Damián"));
+
+        assertThat(game.survivors().size()).isEqualTo(1);
+    }
 }

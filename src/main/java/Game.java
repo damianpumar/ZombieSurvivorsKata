@@ -11,4 +11,8 @@ public class Game {
     public List<Survivor> survivors() {
         return this.survivors;
     }
+
+    public void addSurvivor(Survivor damián) {
+        throw new UnsupportedOperationException();
+    }
 }
