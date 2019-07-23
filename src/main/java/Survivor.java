@@ -76,5 +76,8 @@ public class Survivor {
 
     public void killZombie() {
         this.experience++;
+
+        if (this.experience == 6)
+            this.level = LEVEL.yellow;
     }
 }
