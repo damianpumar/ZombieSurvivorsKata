@@ -59,4 +59,9 @@ public class GameShould {
 
         assertThat(game.level()).isEqualTo(LEVEL.yellow);
     }
+
+    @Test
+    public void game_begin_a_level_blue() {
+        assertThat(game.level()).isEqualTo(LEVEL.blue);
+    }
 }
