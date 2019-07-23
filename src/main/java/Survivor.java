@@ -77,13 +77,15 @@ public class Survivor {
     public void killZombie() {
         this.experience++;
 
+        evaluateNextLevel();
+    }
+
+    private void evaluateNextLevel() {
         if (this.experience == 6)
             this.level = LEVEL.yellow;
-
-        if (this.experience == 18)
+        else if (this.experience == 18)
             this.level = LEVEL.orange;
-
-        if (this.experience == 42)
+        else if (this.experience == 42)
             this.level = LEVEL.red;
     }
 }
