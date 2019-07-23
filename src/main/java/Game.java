@@ -22,4 +22,8 @@ public class Game {
     private boolean survivorExists(Survivor survivor) {
         return this.survivors.stream().anyMatch(s -> s.name().equals(survivor.name()));
     }
+
+    public boolean finished() {
+        return false;
+    }
 }

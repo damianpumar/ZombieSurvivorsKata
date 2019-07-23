@@ -27,4 +27,18 @@ public class GameShould {
 
         game.addSurvivor(new Survivor("Damián"));
     }
+
+    @Test
+    public void game_ends_when_all_survivors_is_dead() throws SurvivorDuplicatedException {
+        Survivor survivor = new Survivor("Damián");
+
+        Game game = new Game();
+        game.addSurvivor(survivor);
+        assertThat(game.finished()).isFalse();
+
+        survivor.receiveAttack();
+        survivor.receiveAttack();
+
+        assertThat(game.finished()).isTrue();
+    }
 }
