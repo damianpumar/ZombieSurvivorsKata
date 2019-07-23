@@ -18,4 +18,13 @@ public class GameShould {
 
         assertThat(game.survivors().size()).isEqualTo(1);
     }
+
+    @Test(expected = SurvivorDuplicatedException.class)
+    public void game_can_have_unique_survivor_by_name() {
+        Game game = new Game();
+
+        game.addSurvivor(new Survivor("Damián"));
+
+        game.addSurvivor(new Survivor("Damián"));
+    }
 }
