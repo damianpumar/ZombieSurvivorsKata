@@ -91,6 +91,13 @@ public class SurvivorShould {
         assertThat(survivor.piecesInReserve().size()).isEqualTo(0);
     }
 
+    @Test
+    public void each_survivor_begins_with_0_experience() {
+        Survivor survivor = createSurvivor();
+
+        assertThat(survivor.experience()).isEqualTo(0);
+    }
+
     private Survivor createSurvivor() {
         return new Survivor("Damián");
     }

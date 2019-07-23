@@ -56,4 +56,8 @@ public class Survivor {
         else if (this.piecesInReserve.size() < 3)
             this.piecesInReserve().add(new Piece(pieceOfEquipment));
     }
+
+    public boolean experience() {
+        throw new UnsupportedOperationException();
+    }
 }
