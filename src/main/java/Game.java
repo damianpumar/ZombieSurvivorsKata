@@ -26,4 +26,8 @@ public class Game {
     public boolean finished() {
         return this.survivors.stream().allMatch(s -> !s.isAlive());
     }
+
+    public LEVEL level() {
+        throw new UnsupportedOperationException();
+    }
 }
