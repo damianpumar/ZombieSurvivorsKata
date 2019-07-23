@@ -24,6 +24,6 @@ public class Game {
     }
 
     public boolean finished() {
-        return false;
+        return this.survivors.stream().allMatch(s -> !s.isAlive());
     }
 }
