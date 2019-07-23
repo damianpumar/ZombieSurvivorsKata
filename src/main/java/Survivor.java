@@ -2,16 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Survivor {
-    private int wounds = 0;
+    private final int START_EXPERIENCE = 0;
+    private final int START_WOUND = 0;
 
-    private String name;
     private final List<Piece> piecesInHand;
     private final List<Piece> piecesInReserve;
+
+    private int wounds;
+    private String name;
     private int experience;
 
     public Survivor(String name) {
         this.name = name;
-        this.experience = 0;
+        this.experience = START_EXPERIENCE;
+        this.wounds = START_WOUND;
 
         this.piecesInHand = new ArrayList();
         this.piecesInReserve = new ArrayList();
