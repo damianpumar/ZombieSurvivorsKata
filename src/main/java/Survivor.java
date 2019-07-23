@@ -4,6 +4,7 @@ import java.util.List;
 public class Survivor {
     private final int START_EXPERIENCE = 0;
     private final int START_WOUND = 0;
+    private final LEVEL START_LEVEL = LEVEL.blue;
 
     private final List<Piece> piecesInHand;
     private final List<Piece> piecesInReserve;
@@ -11,11 +12,13 @@ public class Survivor {
     private int wounds;
     private String name;
     private int experience;
+    private LEVEL level;
 
     public Survivor(String name) {
         this.name = name;
         this.experience = START_EXPERIENCE;
         this.wounds = START_WOUND;
+        this.level = START_LEVEL;
 
         this.piecesInHand = new ArrayList();
         this.piecesInReserve = new ArrayList();
@@ -68,6 +71,6 @@ public class Survivor {
     }
 
     public LEVEL level() {
-        throw new UnsupportedOperationException();
+        return this.level;
     }
 }
