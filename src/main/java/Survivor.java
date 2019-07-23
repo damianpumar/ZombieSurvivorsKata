@@ -73,4 +73,8 @@ public class Survivor {
     public LEVEL level() {
         return this.level;
     }
+
+    public void killZombie() {
+        throw new UnsupportedOperationException();
+    }
 }

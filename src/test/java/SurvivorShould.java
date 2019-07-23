@@ -96,4 +96,11 @@ public class SurvivorShould {
     public void each_survivor_begins_at_level_blue() {
         assertThat(survivor.level()).isEqualTo(LEVEL.blue);
     }
+
+    @Test
+    public void each_time_survivor_kills_a_zombie_they_can_1_experience() {
+        survivor.killZombie();
+
+        assertThat(survivor.experience()).isEqualTo(1);
+    }
 }
